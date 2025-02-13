@@ -54,16 +54,18 @@
 })();
 */
 const messages = [
-    "Are you sure?",
-    "Really sure??",
-    "Are you positive?",
-    "Pookie please...",
-    "Just think about it!",
-    "If you say no, I will be really sad...",
-    "I will be very sad...",
-    "I will be very very very sad...",
-    "Ok fine, I will stop asking...",
-    "Just kidding, say yes please! ❤️"
+    "Are you sure afru?🤣😂",
+    "Really afru??❤😔😔",
+    "Pls maan ja chudail...🥰🥰😘😘",
+    "Suggy Wuuggy please say yes!😥",
+    "Pookie Pookie!! say yes to daddy na!😈😘",
+    "If you say no afru, daddy will be really sad..😭😭",
+    "dill tut dis babe 💔😭",
+    "Ok fine, Chudail 😑😒😒😒",
+    "Soch lo babe, abhi bhii waqt hai...😔🔪🔪",
+    "No was never an option babe ❤🔪",
+    "I love you babe ❤❤❤❤",
+    
 ];
 
 let messageIndex = 0;
@@ -71,12 +73,39 @@ let messageIndex = 0;
 function handleNoClick() {
     const noButton = document.querySelector('.no-button');
     const yesButton = document.querySelector('.yes-button');
-    noButton.textContent = messages[messageIndex];
-    messageIndex = (messageIndex + 1) % messages.length;
-    const currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
-    yesButton.style.fontSize = `${currentSize * 1.5}px`;
+
+    if (messageIndex < messages.length) {
+        noButton.textContent = messages[messageIndex];
+        messageIndex++;
+
+        // Increase the font size of the "Yes" button by a factor of 1.2
+        const currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
+        const newSize = currentSize * 1.2;
+        yesButton.style.fontSize = `${newSize}px`;
+    }
+
+    // Hide the "No" button after the last message has been displayed
+    if (messageIndex >= messages.length) {
+        noButton.style.display = 'none';
+    }
 }
 
 function handleYesClick() {
     window.location.href = "yes_page.html";
 }
+
+// Audio control
+const bgMusic = document.getElementById('bg-music');
+const playPauseButton = document.getElementById('play-pause');
+
+playPauseButton.addEventListener('click', () => {
+    if (bgMusic.paused) {
+        bgMusic.play();
+        playPauseButton.classList.remove('play');
+        playPauseButton.classList.add('pause');
+    } else {
+        bgMusic.pause();
+        playPauseButton.classList.remove('pause');
+        playPauseButton.classList.add('play');
+    }
+});

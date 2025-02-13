@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+         Main Content 
     <div class="container">
         <h1>Will you be my Valentine?</h1>
         <div class="buttons">
@@ -19,4 +21,39 @@
     </div>
     <script src="script.js"></script>
 </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Audio Player Container -->
+    <div id="audio-player">
+        <!-- Background Music -->
+        <audio id="bg-music" loop>
+            <source src="blue.mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <!-- Custom Play/Pause Button -->
+        <button id="play-pause" class="play" aria-label="Play"></button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Will you be my Valentine?</h1>
+        <div class="buttons">
+            <button class="yes-button" onclick="handleYesClick()">Yes</button>
+            <button class="no-button" onclick="handleNoClick()">No</button>
+        </div>
+        <div class="gif_container">
+            <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExam5va3F6M3prYmNwNW0zY2h3ejM2dDNnZ2NjN3N2MG43MWM4YmdlcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/2A6uZ0XlO5UIy6OiEM/giphy.gif" alt="Cute GIF">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
 </html>
+
